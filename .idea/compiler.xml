@@ -6,18 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-cloud-order" />
-        <module name="spring-cloud-stock" />
-        <module name="springcloudlcn" />
         <module name="spring-cloud-eureka" />
-        <module name="txlcn-tm" />
+        <module name="springcloud-lcn" />
+        <module name="springcloudlcn" />
+        <module name="spring-cloud-stock" />
+        <module name="spring-cloud-order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springcloud-lcn" target="1.8" />
       <module name="txlcn-demo" target="1.5" />
       <module name="txlcn-demo-common" target="1.8" />
       <module name="txlcn-demo-tm" target="1.8" />
+      <module name="txlcn-tm" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

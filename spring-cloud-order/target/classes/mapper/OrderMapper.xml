@@ -18,25 +18,24 @@
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
-    from order
+    from order_
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
-    delete from order
+    delete from order_
     where id = #{id,jdbcType=INTEGER}
   </delete>
-
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.tang.lcn.order.domain.Order" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into test01.order(`name`, order_createtime, order_state,order_money, commodity_id) values (#{name,jdbcType=VARCHAR}, #{orderCreatetime,jdbcType=TIMESTAMP}, #{orderState,jdbcType=INTEGER},
+    insert into order_ (`name`, order_createtime, order_state, 
+      order_money, commodity_id)
+    values (#{name,jdbcType=VARCHAR}, #{orderCreatetime,jdbcType=TIMESTAMP}, #{orderState,jdbcType=INTEGER}, 
       #{orderMoney,jdbcType=DOUBLE}, #{commodityId,jdbcType=INTEGER})
   </insert>
-
-
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.tang.lcn.order.domain.Order" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into order
+    insert into order_
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="name != null">
         `name`,
@@ -74,7 +73,7 @@
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.tang.lcn.order.domain.Order">
     <!--@mbg.generated-->
-    update order
+    update order_
     <set>
       <if test="name != null">
         `name` = #{name,jdbcType=VARCHAR},
@@ -96,7 +95,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.tang.lcn.order.domain.Order">
     <!--@mbg.generated-->
-    update order
+    update order_
     set `name` = #{name,jdbcType=VARCHAR},
       order_createtime = #{orderCreatetime,jdbcType=TIMESTAMP},
       order_state = #{orderState,jdbcType=INTEGER},

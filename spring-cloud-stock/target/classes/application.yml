@@ -4,8 +4,12 @@ server:
 spring:
   application:
     name: spring-cloud-stock-8083
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: minbox-seata  # 自定义事务分组名，需要与配置文件中的对应
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
+#    type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test02?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
@@ -31,7 +35,3 @@ eureka:
 
 mybatis:
   mapper-locations: /mapper/*.xml
-
-tx-lcn:
-  client:
-    manager-address: 127.0.0.1:8070
